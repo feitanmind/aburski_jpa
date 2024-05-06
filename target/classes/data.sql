@@ -83,3 +83,32 @@ INSERT INTO address (id, city, address_line1, address_line2, postal_code, patien
 VALUES (19, 'Bydgoszcz', '444 Spruce St', NULL, '85-009', 9);
 INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
 VALUES (20, 'Lublin', '555 Oakwood Ct', 'Unit C', '20-010', 10);
+
+--inserts visits
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (1, 'Routine checkup', '2024-05-06 10:00:00', 1, 1);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (2, 'Follow-up appointment', '2024-05-08 14:30:00', 2, 1);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (3, 'Emergency visit', '2024-05-10 17:15:00', 4, 3);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (4, 'Annual physical', '2024-05-12 09:45:00', 4, 4);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (5, 'Medication review', '2024-05-14 11:30:00', 5, 5);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (6, 'Post-surgery follow-up', '2024-05-16 13:20:00', 1, 6);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (7, 'Dental consultation', '2024-05-18 15:10:00', 7, 1);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (8, 'Lab test results discussion', '2024-05-20 17:00:00', 8, 3);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (9, 'Physical therapy session', '2024-05-22 08:30:00', 9, 3);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (10, 'Nutrition counseling', '2024-05-24 10:15:00', 4, 4);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (11, 'Emergency visit', '2024-05-10 17:46:00', 10, 1);
+INSERT INTO visit (id, description, time, doctor_id, patient_id)
+VALUES (12, 'Medication review', '2024-05-14 13:30:00', 5, 5);
+
+
+
