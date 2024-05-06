@@ -34,7 +34,7 @@ public class PatientEntity {
 	//relations
 	//two-sided relation one to many from parent
 	@OneToMany(mappedBy = "patient")
-	private List<PatientEntity> patients;
+	private List<VisitEntity> visits;
 	//one-sided relation one to one from parent
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY,optional = false)
 	private AddressEntity address;
@@ -101,5 +101,13 @@ public class PatientEntity {
 
 	public void setAddress(AddressEntity address) {
 		this.address = address;
+	}
+
+	public List<VisitEntity> getVisits() {
+		return visits;
+	}
+
+	public void setVisits(List<VisitEntity> visits) {
+		this.visits = visits;
 	}
 }
