@@ -1,31 +1,22 @@
 -- inserting to table doctor
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (1, 'John', 'Smith', '+1 123-456-7890', 'john.smith@example.com', 'D12345', 'Cardiology');
-
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (2, 'Jane', 'Doe', '+1 987-654-3210', 'jane.doe@example.com', 'D54321', 'Pediatrics');
-
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (3, 'Michael', 'Johnson', '+1 555-123-4567', 'michael.johnson@example.com', 'D67890', 'Orthopedics');
-
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (4, 'Emily', 'Brown', '+1 888-555-1234', 'emily.brown@example.com', 'D24680', 'Dermatology');
-
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (5, 'Robert', 'Lee', '+1 777-999-8888', 'robert.lee@example.com', 'D13579', 'Neurology');
-
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (6, 'Maria', 'Garcia', '+1 333-444-5555', 'maria.garcia@example.com', 'D98765', 'Oncology');
-
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (7, 'David', 'Wang', '+1 222-333-4444', 'david.wang@example.com', 'D56789', 'Gastroenterology');
-
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (8, 'Sophia', 'Kim', '+1 777-888-9999', 'sophia.kim@example.com', 'D01234', 'Endocrinology');
-
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (9, 'Daniel', 'Martinez', '+1 555-777-8888', 'daniel.martinez@example.com', 'D43210', 'Psychiatry');
-
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (10, 'Olivia', 'Lopez', '+1 999-888-7777', 'olivia.lopez@example.com', 'D76543', 'Obstetrics');
 
@@ -50,3 +41,45 @@ INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient
 VALUES (9, 'Isabel', 'Lopez', '+1 555-777-8888', 'isabel.lopez@example.com', 'P43210', '1993-12-08', '2024-05-06', 'FEMALE', '93120843210');
 INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, registration_date, sex, pesel_number)
 VALUES (10, 'Jack', 'Davis', '+1 999-888-7777', 'jack.davis@example.com', 'P76543', '1975-06-22', '2024-05-06', 'MALE', '75062276543');
+
+-- inserting data to address
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
+VALUES (1, 'Seattle', '123 Main St', 'Apt 101', '98101', 1);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
+VALUES (2, 'Bellevue', '456 Elm St', NULL, '98004', 2);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
+VALUES (3, 'Redmond', '789 Oak Ave', 'Suite 201', '98052', 3);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
+VALUES (4, 'Kirkland', '567 Pine Rd', 'Unit B', '98033', 4);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
+VALUES (5, 'Bothell', '890 Maple Dr', NULL, '98011', 5);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
+VALUES (6, 'Issaquah', '111 Cedar Ln', 'Apt 303', '98027', 6);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
+VALUES (7, 'Sammamish', '222 Birch Blvd', NULL, '98074', 7);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
+VALUES (8, 'Woodinville', '333 Willow Way', 'Suite 102', '98072', 8);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
+VALUES (9, 'Mercer Island', '444 Spruce St', NULL, '98040', 9);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
+VALUES (10, 'Duvall', '555 Oakwood Ct', 'Unit C', '98019', 10);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
+VALUES (11, 'Warsaw', '123 Main St', 'Apt 101', '00-001', 1);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
+VALUES (12, 'Krakow', '456 Elm St', NULL, '30-002', 2);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
+VALUES (13, 'Gdansk', '789 Oak Ave', 'Suite 201', '80-003', 3);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
+VALUES (14, 'Wroclaw', '567 Pine Rd', 'Unit B', '50-004', 4);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
+VALUES (15, 'Poznan', '890 Maple Dr', NULL, '60-005', 5);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
+VALUES (16, 'Lodz', '111 Cedar Ln', 'Apt 303', '90-006', 6);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
+VALUES (17, 'Szczecin', '222 Birch Blvd', NULL, '70-007', 7);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
+VALUES (18, 'Katowice', '333 Willow Way', 'Suite 102', '40-008', 8);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
+VALUES (19, 'Bydgoszcz', '444 Spruce St', NULL, '85-009', 9);
+INSERT INTO address (id, city, address_line1, address_line2, postal_code, patient_id)
+VALUES (20, 'Lublin', '555 Oakwood Ct', 'Unit C', '20-010', 10);
