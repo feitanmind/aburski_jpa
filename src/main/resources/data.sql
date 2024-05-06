@@ -110,5 +110,24 @@ VALUES (11, 'Emergency visit', '2024-05-10 17:46:00', 10, 1);
 INSERT INTO visit (id, description, time, doctor_id, patient_id)
 VALUES (12, 'Medication review', '2024-05-14 13:30:00', 5, 5);
 
+-- inserts to medical_treatment
+INSERT INTO medical_treatment (id, description, type, visit_id)
+VALUES (1, 'Abdominal Ultrasound', 'USG',1);
+INSERT INTO medical_treatment (id, description, type, visit_id)
+VALUES (2, 'Electrocardiogram', 'EKG',5);
+INSERT INTO medical_treatment (id, description, type, visit_id)
+VALUES (3, 'Chest X-Ray', 'RTG',7);
+INSERT INTO medical_treatment (id, description, type, visit_id)
+VALUES (4, 'Renal Ultrasound', 'USG',4);
+INSERT INTO medical_treatment (id, description, type, visit_id)
+VALUES (5, 'Cardiac Stress Test', 'EKG',8);
+INSERT INTO medical_treatment (id, description, type, visit_id)
+VALUES (6, 'Bone X-Ray', 'RTG',9);
+INSERT INTO medical_treatment (id, description, type, visit_id)
+VALUES (7, 'Thyroid Ultrasound', 'USG',11);
+
+
+
+
 
 
