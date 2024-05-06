@@ -94,4 +94,11 @@ public class PatientEntity {
 		this.dateOfBirth = dateOfBirth;
 	}
 
+	public AddressEntity getAddress() {
+		return address;
+	}
+
+	public void setAddress(AddressEntity address) {
+		this.address = address;
+	}
 }
