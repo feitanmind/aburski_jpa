@@ -33,10 +33,10 @@ public class PatientEntity {
 
 	//relations
 	//two-sided relation one to many from parent
-	@OneToMany(mappedBy = "patient")
+	@OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE)
 	private List<VisitEntity> visits;
-	//one-sided relation one to one from parent
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY,optional = false)
+	//two-sided relation one to one from parent
+	@OneToOne(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private AddressEntity address;
 
 	public Long getId() {

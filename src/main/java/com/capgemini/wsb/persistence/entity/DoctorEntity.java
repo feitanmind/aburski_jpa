@@ -34,10 +34,10 @@ public class DoctorEntity {
 
 	//relations
 	//two-sided relation one to many from parent
-	@OneToMany(mappedBy = "doctor")
+	@OneToMany(mappedBy = "doctor", cascade = CascadeType.REMOVE)
 	private List<VisitEntity> visits;
 	//one-sided relation one to one from parent
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
+	@OneToOne(mappedBy = "doctor",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private AddressEntity address;
 
 	public Long getId() {
