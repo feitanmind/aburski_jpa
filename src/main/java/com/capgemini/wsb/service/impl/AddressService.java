@@ -12,19 +12,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class AddressService implements IAddressService
+public class AddressService extends CrudService<AddressDto,Long,AddressEntity, AddressMapper,IAddressDao> implements IAddressService
 {
-    private final IAddressDao addressDao;
 
-    @Autowired
-    public AddressService(IAddressDao pAddressDao)
+    public AddressService(IAddressDao addressDao)
     {
-        addressDao = pAddressDao;
+        super(addressDao,new AddressMapper());
     }
 
-    @Override
     public AddressDto findById(Long id) {
-        final AddressEntity entity = addressDao.findOne(id);
-        return AddressMapper.mapToTO(entity);
+        final AddressEntity entity = dao.findOne(id);
+        return mapper.mapToDto(entity);
     }
+
 }

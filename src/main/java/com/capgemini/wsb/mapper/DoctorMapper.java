@@ -3,9 +3,9 @@ package com.capgemini.wsb.mapper;
 import com.capgemini.wsb.dto.DoctorDto;
 import com.capgemini.wsb.persistence.entity.DoctorEntity;
 
-public class DoctorMapper extends AbstractMapper<DoctorEntity, DoctorDto> {
-    @Override
-    DoctorEntity mapToEntity(DoctorDto dto)
+public class DoctorMapper implements IMapper<DoctorDto,DoctorEntity> {
+
+    public DoctorEntity mapToEntity(DoctorDto dto)
     {
         if(dto == null) return null;
         DoctorEntity entity = new DoctorEntity();
@@ -18,8 +18,14 @@ public class DoctorMapper extends AbstractMapper<DoctorEntity, DoctorDto> {
         entity.setSpecialization(dto.getSpecialization());
         return entity;
     }
-    @Override
-    DoctorDto mapToDto(DoctorEntity entity)
+
+    public DoctorEntity mapToAddEntity(DoctorDto dto) {
+        DoctorEntity entity = mapToEntity(dto);
+        entity.setId(null);
+        return entity;
+    }
+
+    public DoctorDto mapToDto(DoctorEntity entity)
     {
         if(entity == null) return null;
         return new DoctorDto(
@@ -32,4 +38,5 @@ public class DoctorMapper extends AbstractMapper<DoctorEntity, DoctorDto> {
                 entity.getSpecialization()
         );
     }
+
 }

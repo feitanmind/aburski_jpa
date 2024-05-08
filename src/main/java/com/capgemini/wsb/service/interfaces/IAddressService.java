@@ -4,5 +4,9 @@ import com.capgemini.wsb.dto.AddressDto;
 
 public interface IAddressService
 {
-    public AddressDto findById(final Long id);
+    AddressDto findById(final Long id);
+    AddressDto get(Long id);
+    AddressDto create(AddressDto dto);
+    AddressDto update(AddressDto dto);
+    void delete(Long id);
 }
