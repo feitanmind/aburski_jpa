@@ -4,6 +4,14 @@ import java.io.Serializable;
 
 public class AddressDto implements Serializable
 {
+    public AddressDto(){}
+    public AddressDto(Long id, String addressLine1, String addressLine2, String postalCode)
+    {
+        this.id = id;
+        this.addressLine1 = addressLine1;
+        this.addressLine2 = addressLine2;
+        this.postalCode = postalCode;
+    }
     private Long id;
 
     private String city;
