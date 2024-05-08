@@ -3,6 +3,12 @@ package com.capgemini.wsb.dto;
 import com.capgemini.wsb.persistence.enums.TreatmentType;
 
 public class MedicalTreatmentDto {
+    public MedicalTreatmentDto() {}
+    public MedicalTreatmentDto(int id, String description, TreatmentType treatmentType) {
+        this.id = id;
+        this.description = description;
+        this.type = treatmentType;
+    }
     private int id;
     private String description;
     private TreatmentType type;
