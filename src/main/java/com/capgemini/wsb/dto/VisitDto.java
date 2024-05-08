@@ -1,16 +1,26 @@
 package com.capgemini.wsb.dto;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class VisitDto {
+    public VisitDto() {}
+    public VisitDto(int id, String description, LocalDateTime time, SimpleDoctorDto simpleDoctorDto, SimplePatientDto simplePatientDto, List<MedicalTreatmentDto> medicalTreatments)
+    {
+        this.id = id;
+        this.description = description;
+        this.time = time;
+        this.patient = simplePatientDto;
+        this.doctor = simpleDoctorDto;
+        this.medicalTreatments = medicalTreatments;
+    }
+
     private int id;
     private String description;
     private LocalDateTime time;
-    private int doctorId;
-    private String doctorName;
-    private int patientId;
-    private String patientName;
+    private SimplePatientDto patient;
+    private SimpleDoctorDto doctor;
     private List<MedicalTreatmentDto> medicalTreatments;
 
     public List<MedicalTreatmentDto> getMedicalTreatments() {
@@ -19,38 +29,6 @@ public class VisitDto {
 
     public void setMedicalTreatments(List<MedicalTreatmentDto> medicalTreatments) {
         this.medicalTreatments = medicalTreatments;
-    }
-
-    public String getPatientName() {
-        return patientName;
-    }
-
-    public void setPatientName(String patientName) {
-        this.patientName = patientName;
-    }
-
-    public int getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(int patientId) {
-        this.patientId = patientId;
-    }
-
-    public String getDoctorName() {
-        return doctorName;
-    }
-
-    public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
-    }
-
-    public int getDoctorId() {
-        return doctorId;
-    }
-
-    public void setDoctorId(int doctorId) {
-        this.doctorId = doctorId;
     }
 
     public LocalDateTime getTime() {
@@ -75,5 +53,21 @@ public class VisitDto {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public SimplePatientDto getPatient() {
+        return patient;
+    }
+
+    public void setPatient(SimplePatientDto patient) {
+        this.patient = patient;
+    }
+
+    public SimpleDoctorDto getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(SimpleDoctorDto doctor) {
+        this.doctor = doctor;
     }
 }
