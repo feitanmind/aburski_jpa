@@ -19,6 +19,22 @@ public class PatientDto {
     private AddressDto addressDto;
     private List<VisitDto> visits;
 
+    public PatientDto() {}
+    public PatientDto(int id, String firstName, String lastName, String telephoneNumber, String email,String patientNumber,LocalDate birthDate, LocalDate registrationDate,Sex sex,Long peselNumber,AddressDto addressDto,List<VisitDto> visits) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.telephoneNumber = telephoneNumber;
+        this.email = email;
+        this.patientNumber = patientNumber;
+        this.birthDate = birthDate;
+        this.registrationDate = registrationDate;
+        this.sex = sex;
+        this.peselNumber = peselNumber;
+        this.addressDto = addressDto;
+        this.visits = visits;
+    }
+
     public int getId() {
         return id;
     }
