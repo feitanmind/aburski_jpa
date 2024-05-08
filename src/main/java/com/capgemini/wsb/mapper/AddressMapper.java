@@ -1,18 +1,18 @@
 package com.capgemini.wsb.mapper;
 
-import com.capgemini.wsb.dto.AddressTO;
+import com.capgemini.wsb.dto.AddressDto;
 import com.capgemini.wsb.persistence.entity.AddressEntity;
 
 public final class AddressMapper
 {
 
-    public static AddressTO mapToTO(final AddressEntity addressEntity)
+    public static AddressDto mapToTO(final AddressEntity addressEntity)
     {
         if (addressEntity == null)
         {
             return null;
         }
-        final AddressTO addressTO = new AddressTO();
+        final AddressDto addressTO = new AddressDto();
         addressTO.setId(addressEntity.getId());
         addressTO.setAddressLine1(addressEntity.getAddressLine1());
         addressTO.setAddressLine2(addressEntity.getAddressLine2());
@@ -21,7 +21,7 @@ public final class AddressMapper
         return addressTO;
     }
 
-    public static AddressEntity mapToEntity(final AddressTO addressTO)
+    public static AddressEntity mapToEntity(final AddressDto addressTO)
     {
         if(addressTO == null)
         {
