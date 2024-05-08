@@ -3,6 +3,7 @@ package com.capgemini.wsb.dto;
 import com.capgemini.wsb.persistence.enums.Specialization;
 
 public class DoctorDto {
+    public DoctorDto(){}
     public DoctorDto(Long id, String firstName, String lastName, String email, String phoneNumber, Specialization specialization)
     {
         this.id = id;
