@@ -2,7 +2,7 @@ package com.capgemini.wsb.service.impl;
 
 import com.capgemini.wsb.dto.AddressDto;
 import com.capgemini.wsb.mapper.AddressMapper;
-import com.capgemini.wsb.persistence.dao.AddressDao;
+import com.capgemini.wsb.persistence.dao.interfaces.IAddressDao;
 import com.capgemini.wsb.persistence.entity.AddressEntity;
 import com.capgemini.wsb.service.interfaces.IAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class AddressService implements IAddressService
 {
-    private final AddressDao addressDao;
+    private final IAddressDao addressDao;
 
     @Autowired
-    public AddressService(AddressDao pAddressDao)
+    public AddressService(IAddressDao pAddressDao)
     {
         addressDao = pAddressDao;
     }

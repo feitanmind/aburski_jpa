@@ -1,6 +1,6 @@
 package com.capgemini.wsb.persistance.dao;
 
-import com.capgemini.wsb.persistence.dao.AddressDao;
+import com.capgemini.wsb.persistence.dao.interfaces.IAddressDao;
 import com.capgemini.wsb.persistence.entity.AddressEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AddressDaoTest
 {
     @Autowired
-    private AddressDao addressDao;
+    private IAddressDao addressDao;
 
     @Transactional
     @Test

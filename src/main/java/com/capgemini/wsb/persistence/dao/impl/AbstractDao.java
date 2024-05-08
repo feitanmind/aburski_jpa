@@ -10,12 +10,12 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
-import com.capgemini.wsb.persistence.dao.Dao;
+import com.capgemini.wsb.persistence.dao.interfaces.IDao;
 import org.springframework.transaction.annotation.Transactional;
 
 
 @Transactional
-public abstract class AbstractDao<T, K extends Serializable> implements Dao<T, K> {
+public abstract class AbstractDao<T, K extends Serializable> implements IDao<T, K> {
 
 	@PersistenceContext
 	protected EntityManager entityManager;
