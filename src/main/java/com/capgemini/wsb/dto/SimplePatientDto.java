@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class SimplePatientDto {
     public SimplePatientDto(){}
-    public SimplePatientDto(int id, String name, LocalDate dateOfBirth, String patientNumber)
+    public SimplePatientDto(Long id, String name, LocalDate dateOfBirth, String patientNumber)
     {
         this.id = id;
         this.name = name;
@@ -12,16 +12,16 @@ public class SimplePatientDto {
         this.patientNumber = patientNumber;
     }
 
-    private int id;
+    private Long id;
     private  String name;
     private LocalDate dateOfBirth;
     private String patientNumber;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

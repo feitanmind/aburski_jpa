@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class PatientDto {
-    private int id;
+    private Long id;
     private String firstName;
     private String lastName;
     private String telephoneNumber;
@@ -20,7 +20,7 @@ public class PatientDto {
     private List<VisitDto> visits;
 
     public PatientDto() {}
-    public PatientDto(int id, String firstName, String lastName, String telephoneNumber, String email,String patientNumber,LocalDate birthDate, LocalDate registrationDate,Sex sex,Long peselNumber,AddressDto addressDto,List<VisitDto> visits) {
+    public PatientDto(Long id, String firstName, String lastName, String telephoneNumber, String email,String patientNumber,LocalDate birthDate, LocalDate registrationDate,Sex sex,Long peselNumber,AddressDto addressDto,List<VisitDto> visits) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -35,11 +35,11 @@ public class PatientDto {
         this.visits = visits;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

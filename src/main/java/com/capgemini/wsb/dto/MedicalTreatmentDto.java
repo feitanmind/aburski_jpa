@@ -4,20 +4,20 @@ import com.capgemini.wsb.persistence.enums.TreatmentType;
 
 public class MedicalTreatmentDto {
     public MedicalTreatmentDto() {}
-    public MedicalTreatmentDto(int id, String description, TreatmentType treatmentType) {
+    public MedicalTreatmentDto(Long id, String description, TreatmentType treatmentType) {
         this.id = id;
         this.description = description;
         this.type = treatmentType;
     }
-    private int id;
+    private Long id;
     private String description;
     private TreatmentType type;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class VisitDto {
     public VisitDto() {}
-    public VisitDto(int id, String description, LocalDateTime time, SimpleDoctorDto simpleDoctorDto, SimplePatientDto simplePatientDto, List<MedicalTreatmentDto> medicalTreatments)
+    public VisitDto(Long id, String description, LocalDateTime time, SimpleDoctorDto simpleDoctorDto, SimplePatientDto simplePatientDto, List<MedicalTreatmentDto> medicalTreatments)
     {
         this.id = id;
         this.description = description;
@@ -16,7 +16,7 @@ public class VisitDto {
         this.medicalTreatments = medicalTreatments;
     }
 
-    private int id;
+    private Long id;
     private String description;
     private LocalDateTime time;
     private SimplePatientDto patient;
@@ -47,11 +47,11 @@ public class VisitDto {
         this.description = description;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
