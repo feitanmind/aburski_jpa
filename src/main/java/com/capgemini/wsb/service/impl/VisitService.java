@@ -7,7 +7,10 @@ import com.capgemini.wsb.persistence.entity.VisitEntity;
 import com.capgemini.wsb.service.interfaces.IVisitService;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
+@Transactional
 public class VisitService extends CrudService<VisitDto, Long, VisitEntity, VisitMapper, IVisitDao> implements IVisitService {
 
     protected VisitService(IVisitDao dao) {
