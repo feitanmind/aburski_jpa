@@ -17,23 +17,28 @@ public class PatientController {
         this.patientService = patientService;
     }
 
-    @GetMapping("/patient")
+    @GetMapping("/patient") //Postman Testing OK
     List<PatientDto> getPatientsList()
     {
         final List<PatientDto> patientDtoList = patientService.getList();
         return Objects.requireNonNullElseGet(patientDtoList, ArrayList::new);
     }
-    @PostMapping("/patient")
+    @PostMapping("/patient") //Postman Testing OK
     PatientDto addPatient(@RequestBody PatientDto dto)
     {
         patientService.create(dto);
         return dto;
     }
-    @PutMapping("/patient")
+    @PutMapping("/patient") //Postman Testing OK
     PatientDto updatePatient(@RequestBody PatientDto dto)
     {
         patientService.update(dto);
         return dto;
+    }
+    @DeleteMapping("/patient/{id}") //Postman Testing OK
+    void delete(@PathVariable Long id )
+    {
+        patientService.delete(id);
     }
 
 }
