@@ -4,7 +4,7 @@ import com.capgemini.wsb.persistence.enums.Specialization;
 
 public class DoctorDto {
     public DoctorDto(){}
-    public DoctorDto(Long id, String firstName, String lastName, String email, String phoneNumber, String doctorNumber, Specialization specialization)
+    public DoctorDto(Long id, String firstName, String lastName, String email, String phoneNumber, String doctorNumber, Specialization specialization, AddressDto addressDto)
     {
         this.id = id;
         this.firstName = firstName;
@@ -22,6 +22,7 @@ public class DoctorDto {
     private String email;
     private String doctorNumber;
     private Specialization specialization;
+    private AddressDto addressDto;
 
     public Long getId() {
         return id;
@@ -77,5 +78,13 @@ public class DoctorDto {
 
     public void setDoctorNumber(String doctorNumber) {
         this.doctorNumber = doctorNumber;
+    }
+
+    public AddressDto getAddressDto() {
+        return addressDto;
+    }
+
+    public void setAddressDto(AddressDto addressDto) {
+        this.addressDto = addressDto;
     }
 }

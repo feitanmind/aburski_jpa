@@ -5,6 +5,7 @@ import com.capgemini.wsb.persistence.entity.DoctorEntity;
 
 public class DoctorMapper implements IMapper<DoctorDto,DoctorEntity> {
 
+    public final AddressMapper addressMapper = new AddressMapper();
     public DoctorEntity mapToEntity(DoctorDto dto)
     {
         if(dto == null) return null;
@@ -16,12 +17,14 @@ public class DoctorMapper implements IMapper<DoctorDto,DoctorEntity> {
         entity.setEmail(dto.getEmail());
         entity.setDoctorNumber(dto.getDoctorNumber());
         entity.setSpecialization(dto.getSpecialization());
+        entity.setAddress(addressMapper.mapToEntity(dto.getAddressDto()));
         return entity;
     }
 
     public DoctorEntity mapToAddEntity(DoctorDto dto) {
         DoctorEntity entity = mapToEntity(dto);
         entity.setId(null);
+        entity.getAddress().setId(null);
         return entity;
     }
 
@@ -35,7 +38,8 @@ public class DoctorMapper implements IMapper<DoctorDto,DoctorEntity> {
                 entity.getEmail(),
                 entity.getTelephoneNumber(),
                 entity.getDoctorNumber(),
-                entity.getSpecialization()
+                entity.getSpecialization(),
+                addressMapper.mapToDto(entity.getAddress())
         );
     }
 
