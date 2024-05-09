@@ -2,6 +2,8 @@ package com.capgemini.wsb.service.interfaces;
 
 import com.capgemini.wsb.dto.AddressDto;
 
+import java.util.List;
+
 public interface IAddressService
 {
     AddressDto findById(final Long id);
@@ -9,4 +11,5 @@ public interface IAddressService
     AddressDto create(AddressDto dto);
     AddressDto update(AddressDto dto);
     void delete(Long id);
+    List<AddressDto> getList();
 }
