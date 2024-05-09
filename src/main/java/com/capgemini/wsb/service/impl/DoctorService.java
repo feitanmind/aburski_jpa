@@ -13,7 +13,7 @@ import javax.transaction.Transactional;
 @Transactional
 public class DoctorService extends CrudService<DoctorDto,Long, DoctorEntity, DoctorMapper, IDoctorDao> implements IDoctorService {
 
-    protected DoctorService(IDoctorDao dao) {
+    public DoctorService(IDoctorDao dao) {
         super(dao, new DoctorMapper());
     }
 }
