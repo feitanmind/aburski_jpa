@@ -5,6 +5,8 @@ import com.capgemini.wsb.persistence.dao.interfaces.IDao;
 
 import javax.swing.text.html.parser.Entity;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class CrudService<DTO,ID extends Serializable,E,MAP extends IMapper<DTO,E>, DAO extends IDao<E,ID>>{
 
@@ -35,5 +37,15 @@ public abstract class CrudService<DTO,ID extends Serializable,E,MAP extends IMap
 
     public void delete(ID id) {
         dao.delete(id);
+    }
+
+    public List<DTO> getList(){
+        List<E> entitiesList = dao.findAll();
+        List<DTO> dtosList = new ArrayList<>();
+        for(E entity : entitiesList)
+        {
+            dtosList.add(mapper.mapToDto(entity));
+        }
+        return dtosList;
     }
 }
