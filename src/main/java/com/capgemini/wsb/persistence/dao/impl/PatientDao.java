@@ -17,11 +17,11 @@ public class PatientDao extends AbstractDao<PatientEntity,Long> implements IPati
                 .setParameter("ln",lastName)
                 .getResultList();
     }
-
+    //Choć napisałem już metodę w VisitDao i uważam że tam ona powinna być
     @Override
     public List<VisitEntity> getAllVisitAssignedToPatient(Long patientId) {
         return entityManager
-                .createQuery("SELECT p.visits FROM PatientEntity p WHERE p.id = :pid", VisitEntity.class)
+                .createQuery("SELECT v FROM VisitEntity v WHERE v.patient.id = :pid", VisitEntity.class)
                 .setParameter("pid",patientId)
                 .getResultList();
     }
