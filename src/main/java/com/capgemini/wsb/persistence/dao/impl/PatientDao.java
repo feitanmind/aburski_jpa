@@ -13,7 +13,7 @@ public class PatientDao extends AbstractDao<PatientEntity,Long> implements IPati
     @Override
     public List<PatientEntity> getAllPatientsWithSpecifiedLastname(String lastName) {
         return entityManager
-                .createQuery("SELECT p FROM PatientEntity p WHERE p.lastName == :ln",PatientEntity.class)
+                .createQuery("SELECT p FROM PatientEntity p WHERE p.lastName = :ln",PatientEntity.class)
                 .setParameter("ln",lastName)
                 .getResultList();
     }
