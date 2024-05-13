@@ -29,6 +29,7 @@ public class PatientDaoTest {
         List<PatientEntity> patientsWithJohnsonLastname = patientDao.getAllPatientsWithSpecifiedLastname(specifiedLastName);
         //then
         Assert.assertEquals(numberOfPatientWithJohnsonLastname,patientsWithJohnsonLastname.size());
+        Assert.assertEquals(specifiedLastName,patientsWithJohnsonLastname.get(0).getLastName());
     }
     @Transactional
     @Test
@@ -41,6 +42,7 @@ public class PatientDaoTest {
         List<PatientEntity> patientsWithMoreThanThreshold = patientDao.getAllPatientWhoHaveMoreThanXVisits(thresholdVisits);
         //then
         Assert.assertEquals(numberOfPatientsWithMoreThanExpectedVisits,patientsWithMoreThanThreshold.size());
+        Assert.assertEquals(4,patientsWithMoreThanThreshold.get(0).getVisits().size());
     }
     @Transactional
     @Test
@@ -53,6 +55,7 @@ public class PatientDaoTest {
         List<PatientEntity> patientEntityList = patientDao.getAllPatientWhoHaveSmallerPeselNumber(passedPesel);
         //then
         Assert.assertEquals(expectedNumberOfPatients,patientEntityList.size());
+        Assert.assertTrue(passedPesel > patientEntityList.get(0).getPeselNumber());
     }
 
 }
