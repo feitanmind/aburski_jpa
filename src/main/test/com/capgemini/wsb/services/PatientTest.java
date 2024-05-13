@@ -1,6 +1,8 @@
 package com.capgemini.wsb.services;
 
+import com.capgemini.wsb.dto.AddressDto;
 import com.capgemini.wsb.dto.DoctorDto;
+import com.capgemini.wsb.dto.PatientDto;
 import com.capgemini.wsb.dto.VisitDto;
 import com.capgemini.wsb.service.impl.DoctorService;
 import com.capgemini.wsb.service.impl.PatientService;
@@ -38,6 +40,26 @@ public class PatientTest {
             Assert.assertThrows(NullPointerException.class,() ->visitService.get(v.getId())); //Check visit not exists
             Assert.assertNotNull(doctorService.get(v.getDoctor().getId())); //Check doctor still exists
         }
+    }
+    @Transactional
+    @Test
+    public void shouldReturnAllDtoStructureWhenPatientGet()
+    {
+        //given
+        final Long patientId = 4L;
+        final Long expectedPesel = 95112524680L;
+        final String expectedSex = "MALE";
+        final String expectedAddress = "{id: 14, ad1: 567 Pine Rd, ad2: Unit B, postalCode: 50-004}";
+        final int expectedNumberOfVisits = 2;
+        final String expectedDoctorNameInFirstVisit = "Emily Brown";
+        //when
+        PatientDto patientDto = patientService.get(patientId);
+        //then
+        Assert.assertEquals(expectedAddress,patientDto.getAddressDto().toString());
+        Assert.assertEquals(expectedSex,patientDto.getSex().toString());
+        Assert.assertEquals(expectedPesel,patientDto.getPeselNumber());
+        Assert.assertEquals(expectedNumberOfVisits,patientDto.getVisits().size());
+        Assert.assertEquals(expectedDoctorNameInFirstVisit,patientDto.getVisits().get(0).getDoctor().getName());
 
     }
 
