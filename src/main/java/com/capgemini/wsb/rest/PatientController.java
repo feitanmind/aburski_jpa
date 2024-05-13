@@ -16,6 +16,11 @@ public class PatientController {
     public PatientController(IPatientService patientService) {
         this.patientService = patientService;
     }
+    @GetMapping("/patient/{id}") //Postman Testing OK
+    PatientDto getPatientsList(@PathVariable Long id)
+    {
+        return patientService.get(id);
+    }
 
     @GetMapping("/patient") //Postman Testing OK
     List<PatientDto> getPatientsList()
