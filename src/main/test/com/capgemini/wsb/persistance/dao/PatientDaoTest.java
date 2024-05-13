@@ -30,4 +30,17 @@ public class PatientDaoTest {
         //then
         Assert.assertEquals(numberOfPatientWithJohnsonLastname,patientsWithJohnsonLastname.size());
     }
+    @Transactional
+    @Test
+    public void shouldReturnListOfPatientsWithMoreThanXVisits()
+    {
+        //given
+        final int thresholdVisits = 2;
+        final int numberOfPatientsWithMoreThanExpectedVisits = 2;
+        //when
+        List<PatientEntity> patientsWithMoreThanThreshold = patientDao.getAllPatientWhoHaveMoreThanXVisits(thresholdVisits);
+        //then
+        Assert.assertEquals(numberOfPatientsWithMoreThanExpectedVisits,patientsWithMoreThanThreshold.size());
+    }
+
 }
