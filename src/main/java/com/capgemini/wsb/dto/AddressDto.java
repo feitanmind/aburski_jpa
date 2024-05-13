@@ -22,6 +22,10 @@ public class AddressDto implements Serializable
 
     private String postalCode;
 
+    public String toString(){
+        return String.format("{id: %s, ad1: %s, ad2: %s, postalCode: %s}",id,addressLine1,addressLine2,postalCode);
+    }
+
     public Long getId() {
         return id;
     }
