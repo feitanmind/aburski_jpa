@@ -32,6 +32,16 @@ public class VisitController {
         }
         throw new EntityNotFoundException();
     }
+    @GetMapping("/visit/doctor/{id}")
+    List<VisitDto> getVisitForDoctor(@PathVariable Long id)
+    {
+        return visitService.getListForDoctor(id);
+    }
+    @GetMapping("/visit/patient/{id}")
+    List<VisitDto> getVisitForPatient(@PathVariable Long id)
+    {
+        return visitService.getListForPatient(id);
+    }
     @PostMapping("/visit") //Postman Testing OK
     VisitDto addVisit(@RequestBody VisitDto dto)
     {

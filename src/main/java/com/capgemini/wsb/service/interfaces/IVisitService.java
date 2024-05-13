@@ -10,4 +10,6 @@ public interface IVisitService {
     VisitDto update(VisitDto dto);
     void delete(Long id);
     List<VisitDto> getList();
+    List<VisitDto> getListForPatient(Long id);
+    List<VisitDto> getListForDoctor(Long id);
 }
