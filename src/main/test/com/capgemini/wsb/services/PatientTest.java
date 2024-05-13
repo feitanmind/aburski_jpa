@@ -60,7 +60,18 @@ public class PatientTest {
         Assert.assertEquals(expectedPesel,patientDto.getPeselNumber());
         Assert.assertEquals(expectedNumberOfVisits,patientDto.getVisits().size());
         Assert.assertEquals(expectedDoctorNameInFirstVisit,patientDto.getVisits().get(0).getDoctor().getName());
-
+    }
+    @Transactional
+    @Test
+    public void shouldReturnAllVisitAssignedToPatientWhenHisIdWasPassed()
+    {
+        //given
+        final Long patientId = 1L;
+        final int expectedNumberOfVisits = 4;
+        //when
+        List<VisitDto> patientVisits = patientService.getListOfPatientsVisits(patientId);
+        //then
+        Assert.assertEquals(expectedNumberOfVisits, patientVisits.size());
     }
 
 }
