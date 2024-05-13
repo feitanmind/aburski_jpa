@@ -19,6 +19,8 @@ INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_n
 VALUES (9, 'Daniel', 'Martinez', '+1 555-777-8888', 'daniel.martinez@example.com', 'D43210', 'PSYCHIATRY');
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES (10, 'Olivia', 'Lopez', '+1 999-888-7777', 'olivia.lopez@example.com', 'D76543', 'OBSTETRICS');
+INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
+VALUES (11, 'Marcela', 'Smith', '+1 123-456-7890', 'marcela.smith@example.com', 'D13445', 'CARDIOLOGY');
 
 -- inserting data to patient
 INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, registration_date, sex, pesel_number)
@@ -41,6 +43,8 @@ INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient
 VALUES (9, 'Isabel', 'Lopez', '+1 555-777-8888', 'isabel.lopez@example.com', 'P43210', '1993-12-08', '2024-05-06', 'FEMALE', '93120843210');
 INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, registration_date, sex, pesel_number)
 VALUES (10, 'Jack', 'Davis', '+1 999-888-7777', 'jack.davis@example.com', 'P76543', '1975-06-22', '2024-05-06', 'MALE', '75062276543');
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, registration_date, sex, pesel_number)
+VALUES (11, 'Genowefa', 'Johnson', '+1 123-456-7390', 'genowefa.johnson@example.com', 'P12335', '1990-05-15', '2024-05-06', 'FEMALE', '89062012345');
 
 -- inserting data to address
 INSERT INTO address (id, city, address_line1, address_line2, postal_code, doctor_id)
