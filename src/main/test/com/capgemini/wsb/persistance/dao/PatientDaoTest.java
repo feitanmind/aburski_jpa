@@ -42,5 +42,17 @@ public class PatientDaoTest {
         //then
         Assert.assertEquals(numberOfPatientsWithMoreThanExpectedVisits,patientsWithMoreThanThreshold.size());
     }
+    @Transactional
+    @Test
+    public void shouldReturnListOfPatientsWithLessNumberOfPeselThanPassedPeselNumber()
+    {
+        //given
+        final Long passedPesel = 90000000000L;
+        final int expectedNumberOfPatients = 7;
+        //when
+        List<PatientEntity> patientEntityList = patientDao.getAllPatientWhoHaveSmallerPeselNumber(passedPesel);
+        //then
+        Assert.assertEquals(expectedNumberOfPatients,patientEntityList.size());
+    }
 
 }
